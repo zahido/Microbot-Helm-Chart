@@ -6,3 +6,11 @@
 |_|  |_|_|\___|_|  \___/|_.__/ \___/ \__| |____/ \__, | /____\__,_|_| |_|_|\__,_|
                                                  |___/                           
 ```
+
+###             ### 
+     How To Run
+###            ###
+
+$ helm package ./helm-chart
+$ helm install microbot ./helm-chart
+$ kubectl get all -n cypher
