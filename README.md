@@ -7,10 +7,8 @@
                                                  |___/                           
 ```
 
-###             ### 
-     How To Run
-###            ###
+#### How To Run
 
-$ helm package ./helm-chart
-$ helm install microbot ./helm-chart
-$ kubectl get all -n cypher
+* $ helm package ./helm-chart
+* $ helm install microbot ./helm-chart
+* $ kubectl get all -n cypher
