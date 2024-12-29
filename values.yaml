@@ -1,0 +1,12 @@
+namespace: cypher
+
+deployment:
+  name: microbot
+  image: dontrebootme/microbot:v1
+  replicas: 1
+
+service:
+  name: microbot-service
+  type: NodePort
+  port: 80
+  nodePort: null
