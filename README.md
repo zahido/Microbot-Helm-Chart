@@ -9,6 +9,6 @@
 
 #### How To Run
 
-* $ helm package ./helm-chart
-* $ helm install microbot ./helm-chart
+* $ helm package ./microbot-chart
+* $ helm install microbot ./microbot-chart
 * $ kubectl get all -n cypher
