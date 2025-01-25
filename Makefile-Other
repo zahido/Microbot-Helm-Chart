@@ -1,0 +1,23 @@
+.PHONY: package install deploy check-helm
+
+# Define variables
+CHART_DIR := ./microbot-chart
+RELEASE_NAME := microbot
+
+# Check if microk8s.helm is installed
+check-helm:
+	@command -v microk8s.helm >/dev/null 2>&1 || { echo "Error: microk8s.helm is not installed. Please install MicroK8s and try again."; exit 1; }
+
+# Package the Helm chart
+package: check-helm
+	@echo "Packaging Helm chart..."
+	microk8s.helm package $(CHART_DIR)
+
+# Install the Helm chart
+install: check-helm
+	@echo "Installing Helm chart..."
+	microk8s.helm install $(RELEASE_NAME) $(CHART_DIR)
+
+# Combine package and install
+deploy: check-helm package install
+	@echo "Deployment completed."
