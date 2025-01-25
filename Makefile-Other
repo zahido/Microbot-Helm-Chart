@@ -1,4 +1,4 @@
-.PHONY: package install deploy check-helm
+.PHONY: package install deploy uninstall remove-all check-helm
 
 # Define variables
 CHART_DIR := ./microbot-chart
@@ -17,6 +17,16 @@ package: check-helm
 install: check-helm
 	@echo "Installing Helm chart..."
 	microk8s.helm install $(RELEASE_NAME) $(CHART_DIR)
+
+# Uninstall the Helm release
+uninstall: check-helm
+	@echo "Uninstalling Helm release $(RELEASE_NAME)..."
+	microk8s.helm uninstall $(RELEASE_NAME)
+
+# Remove all Helm releases in the cluster
+remove-all: check-helm
+	@echo "Removing all Helm releases..."
+	microk8s.helm list --short | xargs -n 1 microk8s.helm uninstall
 
 # Combine package and install
 deploy: check-helm package install
