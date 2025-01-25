@@ -12,3 +12,4 @@
 * $ helm package ./microbot-chart
 * $ helm install microbot ./microbot-chart
 * $ kubectl get all -n cypher
+* $ helm uninstall microbot --namespace default
