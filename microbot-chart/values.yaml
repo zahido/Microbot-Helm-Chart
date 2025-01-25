@@ -1,4 +1,4 @@
-namespace: cypher
+namespace: micro-bot
 
 deployment:
   name: microbot
