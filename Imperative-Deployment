@@ -1,0 +1,6 @@
+# Microbot
+
+##  kubectl create ns demo
+##  kubectl create deployment microbot --image=dontrebootme/microbot:v1 -n demo
+##  kubectl expose deployment microbot --type=LoadBalancer --port=80 --name=microbot-service -n demo
+##  kubectl expose deployment microbot --type=NodePort --port=80 --name=microbot-service -n demo
